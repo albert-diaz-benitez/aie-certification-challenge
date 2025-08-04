@@ -38,3 +38,7 @@ ps:
 clean:
 	@echo "Removing all containers, volumes, and images..."
 	docker compose -f $(COMPOSE_FILE) down -v --rmi all
+
+export-dependencies:
+	uv export --format requirements-txt --no-dev --output-file requirements.txt --prerelease=allow
+	uv export --format requirements.txt --output-file requirements-dev.txt --prerelease=allow

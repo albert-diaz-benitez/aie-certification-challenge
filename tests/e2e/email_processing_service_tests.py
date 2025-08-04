@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from src.main import EmailProcessingService
+from src.services.email_processing_service import EmailProcessingService
 
 
 class TestEmailProcessingService:
