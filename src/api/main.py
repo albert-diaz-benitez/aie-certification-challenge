@@ -33,7 +33,6 @@ class PolicyData(BaseModel):
     target_premium: Optional[str] = None
     source_email_id: Optional[str] = None
     extraction_date: str
-    confidence_score: float
 
 
 class CrawlPoliciesResponse(BaseModel):
