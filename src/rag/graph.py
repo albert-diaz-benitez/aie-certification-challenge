@@ -301,12 +301,7 @@ async def extract_policy_data(
                             parsed_policy[field] = field_match.group(1).strip()
 
                 # Add source email ID and extraction date
-                email_id = (
-                    email.sender
-                    if hasattr(email, "sender")
-                    else email.get("id", "unknown")
-                )
-                parsed_policy["source_email_id"] = email_id
+                parsed_policy["source_email_id"] = email.get("sender", "unknown")
                 parsed_policy["extraction_date"] = datetime.now().isoformat()
 
                 # Ensure all fields exist
@@ -454,6 +449,7 @@ async def run_policy_extraction_graph():
         policies=[],
         errors=[],
         status="initialized",
+        existing_email_data=[]
     )
 
     # Create a memory saver for checkpoints
