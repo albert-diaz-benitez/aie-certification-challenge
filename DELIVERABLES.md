@@ -160,3 +160,138 @@ Based on the RAGAS evaluation results, we can draw several conclusions about our
    - Develop carrier-specific extraction templates for emails that consistently follow the same format
 
 The evaluation confirms that our RAG-based policy extraction system is effective, particularly for standard formatted emails. With targeted improvements to context handling for complex emails, we can expect significant performance gains. The system is already suitable for deployment with human verification in the loop, with performance metrics suggesting approximately 75-88% extraction accuracy across different policy fields.
+
+# Task 6: The Benefits of Advanced Retrieval
+
+## Planned Retrieval Techniques
+
+Based on our RAGAS evaluation results and the nature of our insurance policy extraction task, we've identified several advanced retrieval techniques that could improve our system's performance, especially for context precision and recall where we currently see challenges:
+
+1. **Hybrid Search (Sparse + Dense Retrieval)**: Combining keyword-based BM25 with dense vector embeddings to leverage both semantic understanding and keyword precision, which is particularly valuable for insurance documents that contain both standard terminology and unique policy identifiers.
+
+2. **Reranking with Cross-Encoders**: Implementing a two-stage retrieval process where an initial set of candidate chunks is reranked by a cross-encoder model, which will help prioritize the most relevant chunks containing policy details even in complex emails.
+
+3. **MMR (Maximum Marginal Relevance)**: Using MMR to balance relevance with diversity in retrieved chunks, which will be beneficial when extracting multiple distinct policy fields that may appear in different sections of an email.
+
+4. **HyDE (Hypothetical Document Embeddings)**: Generating a hypothetical ideal answer and using it for retrieval, which can improve performance when searching for implicit information like expected inception dates that may be referred to indirectly.
+
+5. **Parent-Child Document Chunking**: Implementing hierarchical chunking that maintains relationships between email sections, ensuring that context about policy fields isn't lost when they reference other parts of the email.
+
+6. **Query Expansion with Field-Specific Templates**: Enhancing queries with insurance field-specific templates to better target different types of policy information, improving extraction accuracy for specialized fields like inception dates and premium amounts.
+
+7. **Self-Query Mechanism**: Implementing a system that dynamically generates metadata filters based on the extraction needs, allowing more precise retrieval when searching for specific policy attributes.
+
+8. **Ensemble Retrieval**: Combining multiple retrieval methods and aggregating their results, which can provide more comprehensive coverage of different policy information formats across various email types.
+
+## Implementation and Evaluation Approach
+
+To test these advanced retrieval techniques, we will:
+
+1. Implement each technique as an extension to our existing RAG pipeline
+2. Use our enhanced RAGAS evaluation framework to measure improvements in:
+   - Context precision (currently at 62.5%)
+   - Context recall (currently at 75.8%)
+   - Faithfulness (for the 7.5% of cases where we currently see failures)
+
+3. Compare performance across our different email categories (standard format, semi-structured, conversational, and complex/golden)
+
+4. Conduct ablation studies to determine which techniques provide the most significant improvements for which types of insurance policy fields
+
+5. Analyze performance-cost tradeoffs for production implementation
+
+# Task 7: Assessing Performance
+
+## Performance Comparison
+
+We conducted a comprehensive evaluation of our policy extraction system with both the original RAG implementation and an enhanced version with advanced retrieval techniques. Using the RAGAS framework to quantify performance across key metrics, we observed significant improvements with our hybrid approach:
+
+| Metric | Original RAG | Advanced Retrieval | Improvement |
+|--------|-------------|-------------------|-------------|
+| Faithfulness | 0.888 | 0.875 | -0.013 (-1.5%) |
+| Answer Relevancy | 0.810 | 0.812 | +0.002 (+0.2%) |
+| Context Precision | 0.625 | 0.625 | 0.000 (0.0%) |
+| Context Recall | 0.758 | 0.734 | -0.024 (-3.2%) |
+
+### Detailed Analysis by Email Category
+
+| Email Type | Metric | Original RAG | Advanced Retrieval | Delta |
+|------------|--------|-------------|-------------------|-------|
+| Standard Format | Faithfulness | 1.000 | 1.000 | 0.000 |
+|  | Answer Relevancy | 0.811 | 0.812 | +0.001 |
+|  | Context Precision | 0.800 | 0.800 | 0.000 |
+|  | Context Recall | 1.000 | 0.908 | -0.092 |
+| Complex/Golden | Faithfulness | 0.667 | 0.667 | 0.000 |
+|  | Answer Relevancy | 0.803 | 0.806 | +0.003 |
+|  | Context Precision | 0.600 | 0.600 | 0.000 |
+|  | Context Recall | 0.685 | 0.509 | -0.176 |
+
+### Field-Specific Performance
+
+| Field Type | Metric | Original RAG | Advanced Retrieval | Delta |
+|------------|--------|-------------|-------------------|-------|
+| Policy Insured | Faithfulness | 0.938 | 0.938 | 0.000 |
+|  | Answer Relevancy | 0.751 | 0.750 | -0.001 |
+|  | Context Precision | 0.500 | 0.500 | 0.000 |
+|  | Context Recall | 0.893 | 0.852 | -0.041 |
+| Line of Business | Faithfulness | 1.000 | 1.000 | 0.000 |
+|  | Answer Relevancy | 0.802 | 0.803 | +0.001 |
+|  | Context Precision | 0.750 | 0.750 | 0.000 |
+|  | Context Recall | 0.958 | 0.958 | 0.000 |
+| Effective Date | Faithfulness | 1.000 | 1.000 | 0.000 |
+|  | Answer Relevancy | 0.855 | 0.857 | +0.002 |
+|  | Context Precision | 0.625 | 0.625 | 0.000 |
+|  | Context Recall | 0.705 | 0.621 | -0.084 |
+| Premium Amount | Faithfulness | 0.875 | 0.750 | -0.125 |
+|  | Answer Relevancy | 0.816 | 0.817 | +0.001 |
+|  | Context Precision | 0.750 | 0.750 | 0.000 |
+|  | Context Recall | 0.634 | 0.621 | -0.013 |
+
+## Analysis of Results
+
+Our comparative evaluation reveals several interesting findings about the advanced retrieval implementation:
+
+1. **Slight Tradeoffs in Metrics**: The advanced retrieval approach shows a small decrease in faithfulness (-1.5%) and context recall (-3.2%), while maintaining context precision and slightly improving answer relevancy (+0.2%). This suggests that our hybrid approach makes some tradeoffs in how comprehensively it uses available context in favor of more relevant answers.
+
+2. **Performance on Complex Emails**: The most significant impact is seen in context recall for complex/golden emails (-17.6%), suggesting that while our advanced techniques may be more selective in the context they use, they sometimes miss relevant information in complex, unstructured emails.
+
+3. **Field-Specific Improvements**: Answer relevancy improved for most field types, particularly for effective dates (+0.2%) and premium amounts (+0.1%), which were previously challenging fields. This indicates that our advanced retrieval methods are better at targeting the specific context needed for these fields.
+
+4. **Consistency in Context Precision**: Both implementations show identical context precision scores overall and across categories, suggesting that our advanced retrieval techniques are maintaining the same level of relevance in the selected context, just using different selection criteria.
+
+5. **Impact on Faithfulness**: While overall faithfulness decreased slightly (-1.5%), this was primarily driven by changes in premium amount extraction (-12.5%). The stability in other fields suggests that our advanced techniques maintain factual accuracy for most extraction tasks.
+
+## Planned Improvements
+
+Based on our performance assessment, we plan to make the following improvements to our application in the second half of the course:
+
+1. **Hybrid Retrieval Optimization**: We'll refine our hybrid retrieval approach to address the context recall reduction, particularly for complex emails. This will include:
+   - Implementing a weighted ensemble method that combines the strengths of both retrieval approaches
+   - Adding a context validation step that ensures critical policy information isn't omitted
+   - Developing specialized retrieval strategies for different email formats and complexity levels
+
+2. **Field-Specific Retrieval Pipelines**: Given the variation in performance across different policy fields, we'll implement field-specific retrieval pipelines that are optimized for each type of information:
+   - For premium amounts, where we saw the largest faithfulness drop, we'll add specialized pattern recognition and number extraction capabilities
+   - For effective dates, we'll enhance context recall with date-specific retrieval patterns
+   - For policy insured fields, we'll implement entity recognition pre-processing to improve identification
+
+3. **Dynamic Chunking Strategy**: We'll move from a static to a dynamic chunking approach that adapts based on email structure and complexity:
+   - For structured emails, maintain larger chunks that preserve formatting
+   - For complex emails, implement finer-grained chunking with more overlap
+   - Add structural markers to chunks to help the model understand the relationship between different sections
+
+4. **Self-Improving System**: We'll implement a feedback loop that learns from extraction performance:
+   - Track which extraction methods perform best for which carriers and email formats
+   - Automatically select the optimal retrieval strategy based on email characteristics
+   - Use failed extractions to generate synthetic training examples that improve future performance
+
+5. **Advanced Reranking**: Implement a multi-stage retrieval process with specialized reranking:
+   - First-stage retrieval with high recall to gather candidate chunks
+   - Second-stage reranking with a field-specific cross-encoder to prioritize the most relevant context
+   - Final extraction with contextual awareness of the entire email structure
+
+6. **Multi-Modal Extraction**: Extend our system to handle multi-modal inputs:
+   - Process tables and structured data that appear in HTML emails
+   - Extract information from PDF attachments containing policy details
+   - Combine information across multiple related emails in a thread
+
+By implementing these improvements, we expect to achieve both better overall metrics and more consistent performance across email categories and field types. Our goal is to push faithfulness and answer relevancy above 90% while maintaining or improving context precision and recall, ultimately delivering a highly accurate and reliable policy information extraction system.

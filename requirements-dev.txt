@@ -273,15 +273,15 @@ h2==4.2.0 \
     --hash=sha256:479a53ad425bb29af087f3458a61d30780bc818e4ebcf01f0b536ba916462ed0 \
     --hash=sha256:c8a52129695e88b1a0578d8d2cc6842bbd79128ac685463b887ee278126ad01f
     # via httpx
-hf-xet==1.1.6rc6 ; platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
-    --hash=sha256:28a9d31de93c35c610c8464e8edb7a3209fb5cc9e6634586ff7858ec10b91fb4 \
-    --hash=sha256:5bfe877003ea3e0084139b14063e7213bba954d6d4261fcde8e84504443cf07b \
-    --hash=sha256:9792e544ec4a3e2599cb490fe8d6622b03a866b9af9ba8a3ac6780327de7eee8 \
-    --hash=sha256:b555a489d461fa97aafee78054d2f3733737709752733bbde1801a61e90e64ae \
-    --hash=sha256:c19c4a2a416ce26025cf0e4934418345a903c04d4c439f098f55eed18c1f4e0b \
-    --hash=sha256:e39248c9b442e1bdaeb55b5f541fd63f9e24dd853c7a36f9857ce4aadaf61428 \
-    --hash=sha256:e5f0d670cd81f75c31fc7968b5d6bb20ae53a68780580813cfe1c355e8f2bffa \
-    --hash=sha256:ec58032e310deb5b7c5a36ac66e6fdc31c226bf966e890d04ce8b4c7b907a3ae
+hf-xet==1.1.6rc7 ; platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64' \
+    --hash=sha256:1cbdc1cce093a04ee2e598da64cecd68cd93f31b8c98e78746cedd6afa3a69df \
+    --hash=sha256:3b9f8e4b2f3f97db95982a2cc3019a2119d3e31b9ef49194096fb4b697d7170a \
+    --hash=sha256:6e5ca5f6f65e3490e667fd8742c62a6cd8d336106a6492832b969badd4a7f8f9 \
+    --hash=sha256:883571b347b2a87a6f3c6cf94733ea8e222c80995e902655a12a17be6a5863b2 \
+    --hash=sha256:8f0236746150cbd5ff177423881f22e5051450c351750691c3ba4fd9ab2bd015 \
+    --hash=sha256:9f978c162c517915b144f58e1888fcbd3c1753cc1fccfba22708aca39cddc0fd \
+    --hash=sha256:b9cc6642a457873c2f5956a999f90626c0c8496a31164684addf25516620af3c \
+    --hash=sha256:e0917eed0d6d3474c696019bfc1b3ca8c7cc8215b4b59656e843400a5fc428e8
     # via huggingface-hub
 hpack==4.1.0 \
     --hash=sha256:157ac792668d995c657d93111f46b4535ed114f0c9c8d672271bbec7eae1b496 \
@@ -423,9 +423,9 @@ langgraph-sdk==0.2.0 \
     --hash=sha256:150722264f225c4d47bbe7394676be102fdbf04c4400a0dd1bd41a70c6430cc7 \
     --hash=sha256:cd8b5f6595e5571be5cbffd04cf936978ab8f5d1005517c99715947ef871e246
     # via langgraph
-langsmith==0.4.10 \
-    --hash=sha256:0bc07a060792c42b0333271f30c2ba51ce47a8d59a0b2bde855cede10f59b3fe \
-    --hash=sha256:257a39238fad7d079c8571fbb5d1dcd24f3dcf7fedb1144c34065f62759ae492
+langsmith==0.4.11 \
+    --hash=sha256:2cb39a8af795ff4014e60ca07a73a9bcd89b67837193c9f6be22efb5c9c4c846 \
+    --hash=sha256:ce3a52809d37854bcb129affd8cd883025985891b82a46f2ae597c511283360d
     # via
     #   aie-certification-challenge
     #   langchain
@@ -545,6 +545,7 @@ numpy==2.3.2 \
     #   pandas
     #   qdrant-client
     #   ragas
+    #   rank-bm25
 oauthlib==3.3.1 \
     --hash=sha256:0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9 \
     --hash=sha256:88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1
@@ -885,6 +886,10 @@ qdrant-client==1.15.1 \
 ragas==0.3.0 \
     --hash=sha256:9e7bdbcf79c939d695ec10dbb7d587971f489145e0f18d33f40df085116c1c79 \
     --hash=sha256:d45f174c665a544b5749d3b2034a207d79ff001fe57fc81f0cd425004b4906a2
+    # via aie-certification-challenge
+rank-bm25==0.2.2 \
+    --hash=sha256:096ccef76f8188563419aaf384a02f0ea459503fdf77901378d4fd9d87e5e51d \
+    --hash=sha256:7bd4a95571adadfc271746fa146a4bcfd89c0cf731e49c3d1ad863290adbe8ae
     # via aie-certification-challenge
 regex==2025.7.34 \
     --hash=sha256:1e4f4f62599b8142362f164ce776f19d79bdd21273e86920a7b604a4275b4f59 \

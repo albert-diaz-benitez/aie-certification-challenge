@@ -1,0 +1,551 @@
+{
+  "metadata": {
+    "evaluation_date": "2025-08-05",
+    "total_samples": 40,
+    "metrics_evaluated": ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
+  },
+  "metrics_summary": {
+    "faithfulness": {
+      "mean": 0.875,
+      "std_dev": 0.307,
+      "median": 1.0
+    },
+    "answer_relevancy": {
+      "mean": 0.812,
+      "std_dev": 0.041,
+      "median": 0.828
+    },
+    "context_precision": {
+      "mean": 0.625,
+      "std_dev": 0.486,
+      "median": 1.0
+    },
+    "context_recall": {
+      "mean": 0.734,
+      "std_dev": 0.389,
+      "median": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_id": 1,
+      "email_id": "test_email_001",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Johnson Manufacturing Inc.",
+      "ground_truth": "Johnson Manufacturing Inc.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.790,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 2,
+      "email_id": "test_email_001",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Property",
+      "ground_truth": "Property",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.793,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 3,
+      "email_id": "test_email_001",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-09-01",
+      "ground_truth": "2025-09-01",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.857,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 4,
+      "email_id": "test_email_001",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-09-15",
+      "ground_truth": "2025-09-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 5,
+      "email_id": "test_email_001",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$45,750.00",
+      "ground_truth": "$45,750.00",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.812,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 6,
+      "email_id": "test_email_002",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Riverside Community Hospital",
+      "ground_truth": "Riverside Community Hospital",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.729,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 7,
+      "email_id": "test_email_002",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Medical Liability",
+      "ground_truth": "Medical Liability",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.744,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 8,
+      "email_id": "test_email_002",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-10-01",
+      "ground_truth": "2025-10-01",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.857,
+        "context_precision": 0.0,
+        "context_recall": 0.385
+      }
+    },
+    {
+      "sample_id": 9,
+      "email_id": "test_email_002",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-09-20",
+      "ground_truth": "2025-09-20",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 1.0,
+        "context_recall": 0.154
+      }
+    },
+    {
+      "sample_id": 10,
+      "email_id": "test_email_002",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$128,500",
+      "ground_truth": "$128,500",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.817,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 11,
+      "email_id": "test_email_003",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Smith Auto Repair Shop",
+      "ground_truth": "Smith Auto Repair Shop",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.765,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 12,
+      "email_id": "test_email_003",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Commercial Auto",
+      "ground_truth": "Commercial Auto",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.839,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 13,
+      "email_id": "test_email_003",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-11-15",
+      "ground_truth": "2025-11-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.861,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 14,
+      "email_id": "test_email_003",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-11-15",
+      "ground_truth": "2025-11-01",
+      "metrics": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.844,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 15,
+      "email_id": "test_email_003",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$8,250",
+      "ground_truth": "$8,250",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.818,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 16,
+      "email_id": "test_email_004",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Green Valley Apartments LLC",
+      "ground_truth": "Green Valley Apartments LLC",
+      "metrics": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.769,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 17,
+      "email_id": "test_email_004",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Commercial Property",
+      "ground_truth": "Commercial Property",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.820,
+        "context_precision": 0.0,
+        "context_recall": 0.714
+      }
+    },
+    {
+      "sample_id": 18,
+      "email_id": "test_email_004",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2026-01-10",
+      "ground_truth": "2026-01-10",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.853,
+        "context_precision": 0.0,
+        "context_recall": 0.083
+      }
+    },
+    {
+      "sample_id": 19,
+      "email_id": "test_email_004",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2026-01-10",
+      "ground_truth": "2025-12-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 1.0,
+        "context_recall": 0.083
+      }
+    },
+    {
+      "sample_id": 20,
+      "email_id": "test_email_004",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$67,890",
+      "ground_truth": "$67,890",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.812,
+        "context_precision": 0.0,
+        "context_recall": 0.083
+      }
+    },
+    {
+      "sample_id": 21,
+      "email_id": "test_email_005",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Downtown Bistro & Catering",
+      "ground_truth": "Downtown Bistro & Catering",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.746,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 22,
+      "email_id": "test_email_005",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Restaurant & Catering Insurance",
+      "ground_truth": "Restaurant & Catering Insurance",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.827,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 23,
+      "email_id": "test_email_005",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-10-15",
+      "ground_truth": "2025-10-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.859,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 24,
+      "email_id": "test_email_005",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-10-01",
+      "ground_truth": "2025-10-01",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 25,
+      "email_id": "test_email_005",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$12,450",
+      "ground_truth": "$12,450",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.834,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 26,
+      "email_id": "golden_email_001",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "ABC Manufacturing Co.",
+      "ground_truth": "ABC Manufacturing Co.",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.790,
+        "context_precision": 1.0,
+        "context_recall": 0.262
+      }
+    },
+    {
+      "sample_id": 27,
+      "email_id": "golden_email_001",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Commercial Property",
+      "ground_truth": "Commercial Property",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.782,
+        "context_precision": 1.0,
+        "context_recall": 0.786
+      }
+    },
+    {
+      "sample_id": 28,
+      "email_id": "golden_email_001",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-10-01",
+      "ground_truth": "2025-10-01",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.857,
+        "context_precision": 0.0,
+        "context_recall": 0.024
+      }
+    },
+    {
+      "sample_id": 29,
+      "email_id": "golden_email_001",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-09-15",
+      "ground_truth": "2025-09-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 0.0,
+        "context_recall": 0.0
+      }
+    },
+    {
+      "sample_id": 30,
+      "email_id": "golden_email_001",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$60,000",
+      "ground_truth": "$60,000",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.817,
+        "context_precision": 1.0,
+        "context_recall": 0.024
+      }
+    },
+    {
+      "sample_id": 31,
+      "email_id": "golden_email_002",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "North Shore Medical Group",
+      "ground_truth": "North Shore Medical Group",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.771,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 32,
+      "email_id": "golden_email_002",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Medical Professional Liability",
+      "ground_truth": "Medical Professional Liability",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.822,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 33,
+      "email_id": "golden_email_002",
+      "question": "What is the effective date of the policy?",
+      "model_response": "2025-11-01",
+      "ground_truth": "2025-11-01",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.850,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 34,
+      "email_id": "golden_email_002",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "2025-09-15",
+      "ground_truth": "2025-09-15",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.843,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 35,
+      "email_id": "golden_email_002",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "$387,500",
+      "ground_truth": "$387,500",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.806,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 36,
+      "email_id": "golden_email_003",
+      "question": "Who is the insured party or policyholder?",
+      "model_response": "Harbor City Properties LLC",
+      "ground_truth": "Harbor City Properties LLC",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.715,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 37,
+      "email_id": "golden_email_003",
+      "question": "What is the line of business or policy type?",
+      "model_response": "Flood Insurance",
+      "ground_truth": "Flood Insurance",
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.786,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 38,
+      "email_id": "golden_email_003",
+      "question": "What is the effective date of the policy?",
+      "model_response": "Not found",
+      "ground_truth": "Not specified in email",
+      "metrics": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.857,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 39,
+      "email_id": "golden_email_003",
+      "question": "What is the expected inception date for the policy?",
+      "model_response": "Not found",
+      "ground_truth": "Not specified in email",
+      "metrics": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.839,
+        "context_precision": 0.0,
+        "context_recall": 1.0
+      }
+    },
+    {
+      "sample_id": 40,
+      "email_id": "golden_email_003",
+      "question": "What is the target premium amount for the policy?",
+      "model_response": "Not found",
+      "ground_truth": "Not specified in email",
+      "metrics": {
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.806,
+        "context_precision": 1.0,
+        "context_recall": 1.0
+      }
+    }
+  ]
+}
