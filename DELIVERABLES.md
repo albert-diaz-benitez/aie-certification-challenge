@@ -1,3 +1,7 @@
+# Loom
+
+[Link to the Loom](https://www.loom.com/share/73c47355e44447fb81b403b54fa36b70?sid=34b206d6-fe00-4e28-b607-8dba535e53db)
+
 # Task 1: Defining your Problem and Audience
 
 ## Context
